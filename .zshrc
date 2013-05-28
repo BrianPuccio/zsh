@@ -44,3 +44,9 @@ alias ud='apt-get update'
 alias ug='apt-get dist-upgrade'
 alias udug='apt-get update && apt-get dist-upgrade'
 alias uz='wget -q --no-check-certificate https://github.com/BrianPuccio/zsh/raw/master/.zshrc -O ~/.zshrc'
+
+# Source aliases that are not universal
+
+if [[ -f ~/.zshaliases ]]; then
+    source ~/.zshaliases
+fi
