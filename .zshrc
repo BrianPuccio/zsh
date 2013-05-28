@@ -36,3 +36,10 @@ fi
 
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
+
+# Aliases for common commands
+
+alias ll='ls -lv --group-directories-first'
+alias ud='apt-get update'
+alias ug='apt-get dist-upgrade'
+alias udug='apt-get update && apt-get dist-upgrade'
