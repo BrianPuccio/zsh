@@ -37,7 +37,7 @@ fi
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 
-# Aliases for common commands
+# Aliases and functions for common commands
 
 # Because I can never remember how to use tar, tar make and tar extract
 alias tarm='tar -czf'
@@ -46,6 +46,15 @@ alias ll='ls -lv --group-directories-first'
 alias ud='apt-get update'
 alias ug='apt-get dist-upgrade'
 alias udug='apt-get update && apt-get dist-upgrade'
+# Quickly add a group, a user and explictly assign them a gid and uid
+function gua() {
+    if [[ "$1" != "" && "$2" != "" ]]; then
+        groupadd -g $1 $2
+        useradd -g $1 -m -s /usr/bin/zsh -u $1 $2
+    else
+        echo "Provide the number and name, respectively, as arguments."
+    fi
+}
 alias uz='wget -q --no-check-certificate https://github.com/BrianPuccio/zsh/raw/master/.zshrc -O ~/.zshrc'
 
 # Source aliases that are not universal
