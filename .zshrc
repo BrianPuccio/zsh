@@ -39,6 +39,9 @@ alias egrep='egrep --color=auto'
 
 # Aliases for common commands
 
+# Because I can never remember how to use tar, tar make and tar extract
+alias tarm='tar -czf'
+alias tare='tar -xzf'
 alias ll='ls -lv --group-directories-first'
 alias ud='apt-get update'
 alias ug='apt-get dist-upgrade'
