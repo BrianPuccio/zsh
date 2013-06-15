@@ -22,6 +22,12 @@ compinit
 
 # End of lines added by compinstall
 
+# Take care when deleting
+
+setopt no_rm_star_silent
+
+# End of take care when deleting
+
 # Aliases to color terminal output
 
 # The --color option only works in a Linux environment
