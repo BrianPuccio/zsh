@@ -28,6 +28,16 @@ setopt no_rm_star_silent
 
 # End of take care when deleting
 
+# If python/django virtual environments are supported, load them
+
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME
+if [[ -f /usr/local/bin/virtualenvwrapper.sh ]]; then
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
+
+# End virtual environments
+
 # Aliases to color terminal output
 
 # The --color option only works in a Linux environment
