@@ -36,6 +36,14 @@ fi
 
 # End OS X Postgres.app
 
+# If OS X, use /usr/local/bin for homebrew
+
+if [[ $(uname) == Darwin ]]; then
+    export PATH=/usr/local/bin:$PATH
+fi
+
+# End OS X path for brew
+
 # If python/django virtual environments are supported, load them
 
 export WORKON_HOME=$HOME/.virtualenvs
