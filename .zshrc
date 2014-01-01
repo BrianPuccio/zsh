@@ -28,6 +28,14 @@ setopt no_rm_star_silent
 
 # End of take care when deleting
 
+# If OS X, use Postgres.app's path
+
+if [[ $(uname) == Darwin ]]; then
+    PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
+fi
+
+# End OS X Postgres.app
+
 # If python/django virtual environments are supported, load them
 
 export WORKON_HOME=$HOME/.virtualenvs
