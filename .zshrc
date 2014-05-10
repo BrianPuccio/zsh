@@ -46,21 +46,27 @@ fi
 
 # If OS X, re-direct help location
 
-unalias run-help
-autoload run-help
-HELPDIR=/usr/local/shre/zsh/helpfiles
+if [[ $(uname) == Darwin ]]; then
+    unalias run-help
+    autoload run-help
+    HELPDIR=/usr/local/shre/zsh/helpfiles
+fi
 
 # End OS X help path
 
 # IF OS X, activate completions
 
-fpath=(/usr/local/share/zsh-completions $fpath)
+if [[ $(uname) == Darwin ]]; then
+    fpath=(/usr/local/share/zsh-completions $fpath)
+fi
 
 # End OS X completions
 
 # If OS X, syntax highlighting
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [[ $(uname) == Darwin ]]; then
+    source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
 
 # End OS X syntax highlighting
 
