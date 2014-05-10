@@ -58,6 +58,12 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 
 # End OS X completions
 
+# If OS X, syntax highlighting
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# End OS X syntax highlighting
+
 # If python/django virtual environments are supported, load them
 
 export WORKON_HOME=$HOME/.virtualenvs
