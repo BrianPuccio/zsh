@@ -50,7 +50,13 @@ unalias run-help
 autoload run-help
 HELPDIR=/usr/local/shre/zsh/helpfiles
 
-# ENd OS X help path
+# End OS X help path
+
+# IF OS X, activate completions
+
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+# End OS X completions
 
 # If python/django virtual environments are supported, load them
 
