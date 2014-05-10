@@ -44,6 +44,14 @@ fi
 
 # End OS X path for brew
 
+# If OS X, re-direct help location
+
+unalias run-help
+autoload run-help
+HELPDIR=/usr/local/shre/zsh/helpfiles
+
+# ENd OS X help path
+
 # If python/django virtual environments are supported, load them
 
 export WORKON_HOME=$HOME/.virtualenvs
