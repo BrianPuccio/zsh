@@ -31,7 +31,7 @@ setopt no_rm_star_silent
 # If OS X, use Postgres.app's path
 
 if [[ $(uname) == Darwin ]]; then
-    PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
+    PATH="//Applications/Postgres.app/Contents/Versions/9.3/bin:$PATH"
 fi
 
 # End OS X Postgres.app
