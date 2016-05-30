@@ -113,6 +113,17 @@ function gua() {
         echo "Provide the number and name, respectively, as arguments."
     fi
 }
+# Move and Link Back
+# Move a directory/file to a new location and immediately link back to it from the original location
+# I.e., mv foo bar && ln -s bar foo
+# Absolute paths will probably be most useful here
+function mlb() {
+    if [[ "$1" != "" && "$2" != "" ]]; then
+        mv $1 $2 && ln -s $2 $1
+    else
+        echo "Provide the full path to the directory/file being moved and the full path to the new destination, respectively, as arguments."
+    fi
+}
 alias uz='wget -q --no-check-certificate https://github.com/BrianPuccio/zsh/raw/master/.zshrc -O ~/.zshrc'
 
 # Source aliases that are not universal
