@@ -116,12 +116,20 @@ function gua() {
 # Move and Link Back
 # Move a directory/file to a new location and immediately link back to it from the original location
 # I.e., mv foo bar && ln -s bar foo
-# Absolute paths will probably be most useful here
+# Depends on realpath (or grealpath on Mac OS, available in homebrew's coreutils) to make links use
+# absolute paths instead of relative paths
 function mlb() {
     if [[ "$1" != "" && "$2" != "" ]]; then
+        if [[ $(uname) == Darwin ]]; then
+            1=$(grealpath $1)
+            2=$(grealpath $2)
+        else
+            1=$(realpath $1)
+            2=$(realpath $2)
+        fi
         mv $1 $2 && ln -s $2 $1
     else
-        echo "Provide the full path to the directory/file being moved and the full path to the new destination, respectively, as arguments."
+        echo "Provide a directory/file to be moved and the new location, respectively, as arguments."
     fi
 }
 alias uz='wget -q --no-check-certificate https://github.com/BrianPuccio/zsh/raw/master/.zshrc -O ~/.zshrc'
