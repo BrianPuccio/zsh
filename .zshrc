@@ -105,6 +105,8 @@ alias pipup3='pip3 list --outdated --format=freeze | grep -v '^\-e' | cut -d = -
 alias ud='apt-get update'
 alias ug='apt-get dist-upgrade'
 alias udug='apt-get update && apt-get dist-upgrade'
+alias zshrcu='wget -q --no-check-certificate https://github.com/BrianPuccio/zsh/raw/master/.zshrc -O ~/.zshrc'
+
 # Quickly add a group, a user and explictly assign them a gid and uid
 function gua() {
     if [[ "$1" != "" && "$2" != "" ]]; then
@@ -133,7 +135,6 @@ function mlb() {
         echo "Provide a directory/file to be moved and the new location, respectively, as arguments."
     fi
 }
-alias uz='wget -q --no-check-certificate https://github.com/BrianPuccio/zsh/raw/master/.zshrc -O ~/.zshrc'
 
 # Source aliases that are not universal
 
